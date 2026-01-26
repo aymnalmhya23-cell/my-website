@@ -12,7 +12,9 @@
             --text-color: #34495e;
             --white-color: #ffffff;
             --light-gray: #f9f9f9;
-            --success-color: #2ecc71;
+            --success-color: #27ae60; /* Darker Green */
+            --warning-color: #f39c12;
+            --info-color: #3498db;
         }
         body {
             font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +30,7 @@
             margin: auto;
             padding: 20px 0;
         }
-        /* Header & Hero Section */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ) no-repeat center center/cover;
             color: var(--white-color);
@@ -47,20 +49,13 @@
             margin: 0 auto 30px auto;
             opacity: 0.9;
         }
-        .cta-button {
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.3s;
-            display: inline-block;
+        .hero .cta-button {
+             background-color: var(--secondary-color);
+             padding: 15px 35px;
+             font-size: 1.2rem;
         }
-        .cta-button:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
+         .hero .cta-button:hover {
+             background-color: #2980b9;
         }
         /* Social Proof Section */
         .social-proof {
@@ -74,35 +69,14 @@
             justify-content: space-around;
             align-items: center;
         }
-        .proof-item {
-            margin: 15px;
-            min-width: 150px;
-        }
-        .proof-item .number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-        .proof-item .text {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-        }
+        .proof-item { margin: 15px; min-width: 150px; }
+        .proof-item .number { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); }
+        .proof-item .text { font-size: 1.1rem; color: var(--primary-color); }
+        
         /* Services Section */
-        .services {
-            padding: 60px 0;
-            background-color: var(--light-gray);
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        .services { padding: 60px 0; background-color: var(--light-gray); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--primary-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card {
             background-color: var(--white-color);
             padding: 30px;
@@ -111,53 +85,19 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-        .service-card h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        .service-card p {
-            font-size: 1rem;
-        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .service-card h3 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 15px; margin-bottom: 10px; }
+        
         /* Countries Section */
-        .countries {
-            padding: 40px 0;
-            text-align: center;
-        }
-        .countries-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .country-flag {
-            font-size: 3rem;
-            transition: transform 0.3s;
-        }
-        .country-flag:hover {
-            transform: scale(1.2);
-        }
+        .countries { padding: 40px 0; text-align: center; }
+        .countries-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
+        .country-flag { font-size: 3rem; transition: transform 0.3s; }
+        .country-flag:hover { transform: scale(1.2); }
+        
         /* WhatsApp Form Section */
-        .whatsapp-form {
-            padding: 60px 0;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-        }
-        .whatsapp-form .section-title {
-            color: var(--white-color);
-        }
-        .form-container {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
+        .whatsapp-form { padding: 60px 0; background-color: var(--primary-color); color: var(--white-color); }
+        .whatsapp-form .section-title { color: var(--white-color); }
+        .form-container { max-width: 800px; margin: auto; text-align: center; }
         #request-text {
             width: 100%;
             height: 150px;
@@ -166,40 +106,72 @@
             border: none;
             font-size: 1.1rem;
             font-family: inherit;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             box-sizing: border-box;
         }
-        #whatsapp-btn {
-            background-color: var(--success-color);
-            cursor: pointer;
+        .whatsapp-buttons-container {
+            display: flex;
+            flex-direction: column; /* Arrange buttons vertically */
+            align-items: center;
+            gap: 20px;
         }
-        #whatsapp-btn:hover {
-            background-color: #27ae60;
-        }
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
+        .cta-button {
             color: var(--white-color);
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #4a627a;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 90%;
+            max-width: 400px;
         }
+        .cta-button:hover { transform: translateY(-3px); }
+
+        /* Special Main Button Style */
+        #whatsapp-btn-main {
+            background-color: var(--success-color);
+            padding: 20px 30px;
+            border: 2px solid var(--white-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            order: -1; /* Puts this button on top */
+        }
+        #whatsapp-btn-main:hover { background-color: #2ecc71; }
+        .button-flags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .button-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        #whatsapp-btn-2 { background-color: var(--info-color); }
+        #whatsapp-btn-2:hover { background-color: #2980b9; }
+        #whatsapp-btn-3 { background-color: var(--warning-color); }
+        #whatsapp-btn-3:hover { background-color: #d35400; }
+        
+        /* Footer */
+        footer { background-color: var(--primary-color); color: var(--white-color); text-align: center; padding: 20px 0; border-top: 1px solid #4a627a; }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1.1rem; }
             .section-title { font-size: 2rem; }
-            .proof-grid { flex-direction: column; }
         }
     </style>
-    <!-- Google Fonts for a nice Arabic font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 1. Hero Section -->
     <header class="hero">
         <div class="container">
             <h1>منصة الإبهار: نخبة من الأكاديميين في خدمتك</h1>
@@ -208,64 +180,31 @@
         </div>
     </header>
 
-    <!-- 2. Social Proof Section -->
     <section class="social-proof">
         <div class="container">
             <div class="proof-grid">
-                <div class="proof-item">
-                    <div class="number">+2000</div>
-                    <div class="text">دكتور متخصص</div>
-                </div>
-                <div class="proof-item">
-                    <div class="number">+500</div>
-                    <div class="text">مقرر جامعي</div>
-                </div>
-                <div class="proof-item">
-                    <div class="number">6</div>
-                    <div class="text">دول عربية</div>
-                </div>
-                <div class="proof-item">
-                    <div class="number">24/7</div>
-                    <div class="text">دعم فوري</div>
-                </div>
+                <div class="proof-item"><div class="number">+2000</div><div class="text">دكتور متخصص</div></div>
+                <div class="proof-item"><div class="number">+500</div><div class="text">مقرر جامعي</div></div>
+                <div class="proof-item"><div class="number">7</div><div class="text">دول عربية</div></div>
+                <div class="proof-item"><div class="number">24/7</div><div class="text">دعم فوري</div></div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Services Section -->
     <section class="services">
         <div class="container">
             <h2 class="section-title">خدماتنا الأكاديمية المتكاملة</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>شروحات المقررات</h3>
-                    <p>شرح وافٍ للمواد الدراسية عبر خبراء متخصصين في مجالك لضمان استيعابك الكامل.</p>
-                </div>
-                <div class="service-card">
-                    <h3>أبحاث وواجبات</h3>
-                    <p>إعداد أبحاث وتقارير أكاديمية مبتكرة وخالية من الانتحال وبأعلى معايير الجودة.</p>
-                </div>
-                <div class="service-card">
-                    <h3>مشاريع التخرج</h3>
-                    <p>مساعدة شاملة من اختيار الفكرة، مرورًا بالخطة، وانتهاءً بالتسليم النهائي للمشروع.</p>
-                </div>
-                <div class="service-card">
-                    <h3>تدقيق لغوي وعلمي</h3>
-                    <p>مراجعة دقيقة لأبحاثك ورسائلك لضمان خلوها من الأخطاء اللغوية والعلمية.</p>
-                </div>
-                <div class="service-card">
-                    <h3>تحليل إحصائي (SPSS )</h3>
-                    <p>مساعدة متخصصة في تحليل البيانات باستخدام برامج مثل SPSS وإعداد فصل النتائج.</p>
-                </div>
-                <div class="service-card">
-                    <h3>عروض تقديمية</h3>
-                    <p>تحويل أبحاثك ومشاريعك إلى عروض تقديمية احترافية ومبهرة (PowerPoint).</p>
-                </div>
+                <div class="service-card"><h3>شروحات المقررات</h3><p>شرح وافٍ للمواد الدراسية عبر خبراء متخصصين في مجالك لضمان استيعابك الكامل.</p></div>
+                <div class="service-card"><h3>أبحاث وواجبات</h3><p>إعداد أبحاث وتقارير أكاديمية مبتكرة وخالية من الانتحال وبأعلى معايير الجودة.</p></div>
+                <div class="service-card"><h3>مشاريع التخرج</h3><p>مساعدة شاملة من اختيار الفكرة، مرورًا بالخطة، وانتهاءً بالتسليم النهائي للمشروع.</p></div>
+                <div class="service-card"><h3>تدقيق لغوي وعلمي</h3><p>مراجعة دقيقة لأبحاثك ورسائلك لضمان خلوها من الأخطاء اللغوية والعلمية.</p></div>
+                <div class="service-card"><h3>تحليل إحصائي (SPSS )</h3><p>مساعدة متخصصة في تحليل البيانات باستخدام برامج مثل SPSS وإعداد فصل النتائج.</p></div>
+                <div class="service-card"><h3>عروض تقديمية</h3><p>تحويل أبحاثك ومشاريعك إلى عروض تقديمية احترافية ومبهرة (PowerPoint).</p></div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Countries Section -->
     <section class="countries">
         <div class="container">
             <h2 class="section-title">نفخر بخدمة طلابنا في</h2>
@@ -276,23 +215,29 @@
                 <span class="country-flag" title="قطر">🇶🇦</span>
                 <span class="country-flag" title="البحرين">🇧🇭</span>
                 <span class="country-flag" title="الأردن">🇯🇴</span>
+                <span class="country-flag" title="عُمان">🇴🇲</span>
             </div>
         </div>
     </section>
 
-    <!-- 5. WhatsApp Form Section -->
     <section class="whatsapp-form" id="form-section">
         <div class="container">
             <div class="form-container">
                 <h2 class="section-title">اطلب خدمتك الآن</h2>
-                <p style="max-width: 600px; margin: -20px auto 30px auto; opacity: 0.9;">صف طلبك بالتفصيل في المربع أدناه (مثل: اسم المادة، متطلبات الواجب، موعد التسليم) ثم اضغط على زر الإرسال.</p>
+                <p style="max-width: 600px; margin: -20px auto 30px auto; opacity: 0.9;">صف طلبك بالتفصيل في المربع أدناه، ثم اختر أحد ممثلي الخدمة للتواصل معه مباشرة عبر واتساب.</p>
                 <textarea id="request-text" placeholder="مثال: أحتاج مساعدة في واجب لمادة التسويق الرقمي، الموضوع عن تحليل المنافسين، والتسليم بعد 3 أيام..."></textarea>
-                <a id="whatsapp-btn" class="cta-button">أرسل الطلب إلى فريقنا على واتساب</a>
+                <div class="whatsapp-buttons-container">
+                    <button id="whatsapp-btn-main" class="cta-button">
+                        <div class="button-flags">🇸🇦 🇦🇪 🇰🇼 🇶🇦 🇧🇭 🇯🇴 🇴🇲</div>
+                        <div class="button-text">المنسق الرئيسي (لجميع الدول)</div>
+                    </button>
+                    <button id="whatsapp-btn-2" class="cta-button">تواصل مع المنسق الثاني</button>
+                    <button id="whatsapp-btn-3" class="cta-button">تواصل مع المنسق الثالث</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 منصة الإبهار للخدمات التعليمية. جميع الحقوق محفوظة.</p>
@@ -300,24 +245,29 @@
     </footer>
 
     <script>
-        document.getElementById('whatsapp-btn').addEventListener('click', function() {
-            // Get the user's request text
+        function sendWhatsAppMessage(phoneNumber) {
             let requestText = document.getElementById('request-text').value;
+            if (requestText.trim() === "") {
+                alert("يرجى كتابة تفاصيل طلبك أولاً.");
+                return;
+            }
             
-            // Your WhatsApp number
-            let phoneNumber = '966532035449';
-            
-            // Create the WhatsApp message
             let message = "السلام عليكم،\nأرغب في طلب خدمة من منصة الإبهار.\n\nتفاصيل الطلب:\n" + requestText;
-            
-            // Encode the message for the URL
             let encodedMessage = encodeURIComponent(message);
-            
-            // Create the WhatsApp link
             let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            // Open the link in a new tab
             window.open(whatsappURL, '_blank' );
+        }
+
+        document.getElementById('whatsapp-btn-main').addEventListener('click', function() {
+            sendWhatsAppMessage('966532035449');
+        });
+
+        document.getElementById('whatsapp-btn-2').addEventListener('click', function() {
+            sendWhatsAppMessage('9665570286807');
+        });
+
+        document.getElementById('whatsapp-btn-3').addEventListener('click', function() {
+            sendWhatsAppMessage('966595585632');
         });
     </script>
 
