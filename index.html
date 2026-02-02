@@ -13,13 +13,12 @@
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
-            --accent-color: #e74c3c;
             --background-color: #f4f7f9;
             --text-color: #34495e;
             --white-color: #ffffff;
             --light-gray: #ecf0f1;
-            --success-color: #2ecc71;
             --gold-color: #f1c40f;
+            --dark-gold-color: #c09d0b;
         }
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap' );
         
@@ -35,7 +34,6 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 40px 0;
         }
         section {
             padding: 60px 0;
@@ -64,102 +62,84 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ) no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ) no-repeat center center/cover;
             color: var(--white-color);
             text-align: center;
-            padding: 120px 0;
+            padding: 80px 0 20px 0; /* Reduced padding at bottom */
         }
         .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
         .hero p { font-size: 1.4rem; max-width: 750px; margin: 0 auto 30px auto; opacity: 0.9; }
-        .hero .cta-button {
-            background: var(--secondary-color);
-            color: var(--white-color);
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .hero .cta-button:hover { background-color: #2980b9; transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-
-        /* Services Section */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card {
-            background-color: var(--white-color);
-            padding: 35px;
+        
+        /* Merged Services Section */
+        .merged-services {
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            padding: 25px;
+            margin-top: 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .services-grid-merged {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            border-bottom: 4px solid var(--secondary-color);
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
-        .service-card .icon { font-size: 3.5rem; color: var(--secondary-color); margin-bottom: 15px; }
-        .service-card h3 { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; }
-
-        /* FAQ Section */
-        .faq { background-color: var(--light-gray); }
-        .faq-item {
-            background: var(--white-color);
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        .faq-question {
-            padding: 20px 25px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            cursor: pointer;
+        .service-item-merged {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            color: var(--primary-color);
+            color: var(--white-color);
+            transition: transform 0.3s;
         }
-        .faq-question::after { content: '+'; font-size: 2rem; transition: transform 0.3s; }
-        .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-            padding: 0 25px;
-        }
-        .faq-item.active .faq-answer { max-height: 200px; padding: 0 25px 20px 25px; }
+        .service-item-merged:hover { transform: scale(1.1); }
+        .service-item-merged .icon { font-size: 2.5rem; }
+        .service-item-merged h3 { font-size: 1rem; font-weight: 600; margin-top: 8px; }
 
         /* Contact Section */
-        .contact { background: linear-gradient(135deg, var(--primary-color), #34495e); }
-        .contact .section-title, .contact .section-subtitle { color: var(--white-color); }
+        .contact { padding-top: 40px; }
         #request-text {
             width: 100%;
             height: 150px;
             padding: 20px;
             border-radius: 10px;
-            border: none;
+            border: 2px solid var(--light-gray);
             font-size: 1.2rem;
             font-family: 'Cairo', sans-serif;
             margin-bottom: 30px;
             box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
-        .coordinators-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        #request-text:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+        .coordinators-grid-horizontal {
+            display: flex;
             justify-content: center;
+            align-items: stretch; /* Make cards same height */
+            flex-wrap: wrap;
+            gap: 25px;
         }
         .coordinator-card {
-            background: rgba(255,255,255,0.1);
+            background: var(--white-color);
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid #ddd;
             transition: all 0.3s ease;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
         }
-        .coordinator-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .coordinator-card h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; color: var(--white-color); }
+        .coordinator-card:hover { transform: translateY(-8px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
+        .coordinator-card h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 10px; color: var(--primary-color); }
+        .coordinator-card p { margin-top: 0; color: #7f8c8d; flex-grow: 1; }
         .coordinator-card .cta-button {
-            background: var(--secondary-color);
+            background: var(--dark-gold-color);
             color: var(--white-color);
             padding: 12px 25px;
             text-decoration: none;
@@ -169,21 +149,39 @@
             display: block;
             width: 100%;
             box-sizing: border-box;
+            margin-top: 15px;
         }
         /* Main Coordinator Card */
         .main-coordinator {
-            background: linear-gradient(135deg, var(--gold-color), #e5b30b);
+            background: linear-gradient(135deg, var(--gold-color), var(--dark-gold-color));
             color: var(--primary-color);
             transform: scale(1.05);
-            grid-column: 1 / -1; /* Takes full width on grid */
-            max-width: 500px;
-            margin: 0 auto;
+            order: 2; /* Center item */
+            border: 2px solid var(--gold-color);
         }
-        .main-coordinator:hover { background: linear-gradient(135deg, #ffdd59, var(--gold-color)); transform: scale(1.08); }
+        .main-coordinator:hover { transform: scale(1.1); }
         .main-coordinator h3 { color: var(--primary-color); font-size: 1.8rem; }
         .main-coordinator .crown { font-size: 2rem; margin-bottom: 10px; }
         .main-coordinator .flags { font-size: 1.5rem; margin-bottom: 15px; }
         .main-coordinator .cta-button { background: var(--primary-color); color: var(--white-color); }
+        
+        .side-coordinator-1 { order: 1; } /* Left item */
+        .side-coordinator-2 { order: 3; } /* Right item */
+
+        /* FAQ Section */
+        .faq { background-color: var(--light-gray); }
+        .faq-item { background: var(--white-color); margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        .faq-question { padding: 20px 25px; font-size: 1.3rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--primary-color); }
+        .faq-question::after { content: '+'; font-size: 2rem; transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; padding: 0 25px; }
+        .faq-item.active .faq-answer { max-height: 200px; padding: 0 25px 20px 25px; }
+
+        /* Countries Section */
+        .countries { padding: 40px 0; text-align: center; background: var(--white-color); }
+        .countries-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
+        .country-flag { font-size: 3rem; transition: transform 0.3s; }
+        .country-flag:hover { transform: scale(1.2); }
 
         /* Footer */
         footer { background-color: var(--primary-color); color: var(--light-gray); text-align: center; padding: 30px 0; }
@@ -195,22 +193,42 @@
         <div class="container">
             <h1>حوّل طموحك إلى إنجاز</h1>
             <p>منصة الإبهار هي بوابتك للحصول على مساعدة أكاديمية موثوقة من نخبة الخبراء في العالم العربي. دعنا نساعدك على التفوق.</p>
-            <a href="#contact-section" class="cta-button">اطلب خدمتك الآن</a>
+            <div class="merged-services">
+                <div class="services-grid-merged">
+                    <div class="service-item-merged"><div class="icon">📚</div><h3>أبحاث وواجبات</h3></div>
+                    <div class="service-item-merged"><div class="icon">🎓</div><h3>مشاريع التخرج</h3></div>
+                    <div class="service-item-merged"><div class="icon">📈</div><h3>تحليل إحصائي</h3></div>
+                    <div class="service-item-merged"><div class="icon">🗣️</div><h3>شروحات المقررات</h3></div>
+                    <div class="service-item-merged"><div class="icon">📝</div><h3>تدقيق لغوي</h3></div>
+                    <div class="service-item-merged"><div class="icon">🖥️</div><h3>عروض تقديمية</h3></div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="services">
+        <section class="contact" id="contact-section">
             <div class="container">
-                <h2 class="section-title">خدماتنا المتكاملة</h2>
-                <p class="section-subtitle">نقدم مجموعة شاملة من الخدمات الأكاديمية المصممة لتلبية كافة احتياجاتك الجامعية بأعلى معايير الجودة والاحترافية.</p>
-                <div class="services-grid">
-                    <div class="service-card"><div class="icon">📚</div><h3>أبحاث وواجبات</h3><p>إعداد أبحاث وتقارير مبتكرة وخالية من الانتحال.</p></div>
-                    <div class="service-card"><div class="icon">🎓</div><h3>مشاريع التخرج</h3><p>مساعدة شاملة من الفكرة وحتى التسليم النهائي.</p></div>
-                    <div class="service-card"><div class="icon">📈</div><h3>تحليل إحصائي</h3><p>تحليل بيانات احترافي باستخدام SPSS وغيرها.</p></div>
-                    <div class="service-card"><div class="icon">🗣️</div><h3>شروحات المقررات</h3><p>شرح وافٍ للمواد لضمان استيعابك الكامل.</p></div>
-                    <div class="service-card"><div class="icon">📝</div><h3>تدقيق لغوي</h3><p>مراجعة دقيقة لضمان خلو أعمالك من الأخطاء.</p></div>
-                    <div class="service-card"><div class="icon">🖥️</div><h3>عروض تقديمية</h3><p>تصميم عروض تقديمية احترافية ومبهرة.</p></div>
+                <h2 class="section-title">اطلب خدمتك الآن</h2>
+                <p class="section-subtitle">اكتب تفاصيل طلبك في المربع أدناه، ثم اختر المنسق المناسب للتواصل معه مباشرة عبر واتساب وبدء رحلة نجاحك.</p>
+                <textarea id="request-text" placeholder="مثال: أحتاج بحثًا من 15 صفحة لمادة الإدارة الاستراتيجية، الموضوع عن تحليل SWOT لشركة أمازون، والتسليم خلال 5 أيام..."></textarea>
+                <div class="coordinators-grid-horizontal">
+                    <div class="coordinator-card main-coordinator">
+                        <div class="crown">👑</div>
+                        <h3>المنسق الرئيسي</h3>
+                        <div class="flags">🇸🇦 🇦🇪 🇰🇼 🇶🇦 🇧🇭 🇯🇴 🇴🇲</div>
+                        <button class="cta-button" onclick="sendWhatsAppMessage('966532035449')">تواصل الآن (لجميع الدول)</button>
+                    </div>
+                    <div class="coordinator-card side-coordinator-1">
+                        <h3>منسق خدمات #2</h3>
+                        <p>متخصص في الاستفسارات العامة والطلبات.</p>
+                        <button class="cta-button" onclick="sendWhatsAppMessage('966595585632')">تواصل الآن</button>
+                    </div>
+                    <div class="coordinator-card side-coordinator-2">
+                        <h3>منسق خدمات #3</h3>
+                        <p>متخصص في الرد السريع والمتابعة.</p>
+                        <button class="cta-button" onclick="sendWhatsAppMessage('966586659510')">تواصل الآن</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -238,28 +256,17 @@
             </div>
         </section>
 
-        <section class="contact" id="contact-section">
+        <section class="countries">
             <div class="container">
-                <h2 class="section-title">ابدأ الآن</h2>
-                <p class="section-subtitle">اكتب تفاصيل طلبك في المربع أدناه، ثم اختر المنسق المناسب للتواصل معه مباشرة عبر واتساب وبدء رحلة نجاحك.</p>
-                <textarea id="request-text" placeholder="مثال: أحتاج بحثًا من 15 صفحة لمادة الإدارة الاستراتيجية، الموضوع عن تحليل SWOT لشركة أمازون، والتسليم خلال 5 أيام..."></textarea>
-                <div class="coordinators-grid">
-                    <div class="coordinator-card main-coordinator">
-                        <div class="crown">👑</div>
-                        <h3>المنسق الرئيسي</h3>
-                        <div class="flags">🇸🇦 🇦🇪 🇰🇼 🇶🇦 🇧🇭 🇯🇴 🇴🇲</div>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966532035449')">تواصل الآن (لجميع الدول)</button>
-                    </div>
-                    <div class="coordinator-card">
-                        <h3>منسق خدمات</h3>
-                        <p>متخصص في الرد السريع والمتابعة.</p>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966586659510')">تواصل الآن</button>
-                    </div>
-                    <div class="coordinator-card">
-                        <h3>منسق خدمات</h3>
-                        <p>متخصص في الاستفسارات العامة والطلبات.</p>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966595585632')">تواصل الآن</button>
-                    </div>
+                <h2 class="section-title">نفخر بخدمة طلابنا في</h2>
+                <div class="countries-grid">
+                    <span class="country-flag" title="السعودية">🇸🇦</span>
+                    <span class="country-flag" title="الإمارات">🇦🇪</span>
+                    <span class="country-flag" title="الكويت">🇰🇼</span>
+                    <span class="country-flag" title="قطر">🇶🇦</span>
+                    <span class="country-flag" title="البحرين">🇧🇭</span>
+                    <span class="country-flag" title="الأردن">🇯🇴</span>
+                    <span class="country-flag" title="عُمان">🇴🇲</span>
                 </div>
             </div>
         </section>
@@ -272,7 +279,6 @@
     </footer>
 
     <script>
-        // Send WhatsApp Message Function
         function sendWhatsAppMessage(phoneNumber) {
             const requestText = document.getElementById('request-text').value;
             if (requestText.trim() === "") {
@@ -286,31 +292,23 @@
             window.open(whatsappURL, '_blank' );
         }
 
-        // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 faqItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+                if (!isActive) { item.classList.add('active'); }
             });
         });
 
-        // Scroll Animations
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
             });
         }, { threshold: 0.1 });
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => { observer.observe(section); });
     </script>
 
 </body>
