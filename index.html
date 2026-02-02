@@ -41,62 +41,56 @@
             padding: 80px 0;
         }
         .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
-        .hero p { font-size: 1.4rem; max-width: 750px; margin: 0 auto 40px auto; opacity: 0.9; }
-
-        /* Interactive Rotating Services Wheel */
-        .wheel-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 40px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .hero p { font-size: 1.4rem; max-width: 750px; margin: 0 auto; opacity: 0.9; }
+        
+        /* New Services Bar */
+        .services-bar-container {
+            padding: 40px 0;
+            text-align: center;
         }
-        .center-logo {
+        .elebhar-logo {
             font-size: 3rem;
             font-weight: 900;
-            color: var(--gold-color);
-            text-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+            margin-bottom: 30px;
         }
-        .wheel {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
-            cursor: grab;
+        .elebhar-logo .gold { color: var(--gold-color); text-shadow: 0 0 10px rgba(241, 196, 15, 0.3); }
+        .elebhar-logo .black { color: var(--primary-color); }
+        
+        .services-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .wheel:active { cursor: grabbing; }
-        .wheel-item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            margin: -40px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white-color);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s;
+        .service-bar-item {
+            background: var(--white-color);
+            border-radius: 15px;
+            padding: 20px 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .wheel-item:hover { transform: scale(1.15); }
-        .wheel-item .icon { font-size: 2rem; }
-        .wheel-item .text { font-size: 0.8rem; font-weight: 600; margin-top: 5px; }
+        .service-bar-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .service-bar-item .icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        .service-bar-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 10px;
+            color: var(--primary-color);
+        }
 
         /* Contact Section */
-        .contact { padding-top: 40px; }
+        .contact { padding-top: 40px; background: var(--light-gray); }
         .section-title { text-align: center; font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; color: var(--primary-color); }
         .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px auto; color: #7f8c8d; }
         #request-text {
-            width: 100%; height: 150px; padding: 20px; border-radius: 10px; border: 2px solid var(--light-gray);
+            width: 100%; height: 150px; padding: 20px; border-radius: 10px; border: 2px solid #ddd;
             font-size: 1.2rem; font-family: 'Cairo', sans-serif; margin-bottom: 30px; box-sizing: border-box;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
@@ -135,17 +129,6 @@
             .main-coordinator { order: -1; width: 100%; max-width: 400px; }
         }
 
-        /* Detailed Services Section */
-        .detailed-services { background-color: var(--light-gray); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card-detailed {
-            background-color: var(--white-color); padding: 35px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-            text-align: center; transition: all 0.3s ease; border-bottom: 4px solid var(--secondary-color);
-        }
-        .service-card-detailed:hover { transform: translateY(-10px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
-        .service-card-detailed .icon { font-size: 3.5rem; color: var(--secondary-color); margin-bottom: 15px; }
-        .service-card-detailed h3 { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; }
-
         /* FAQ Section */
         .faq { background-color: #fff; }
         .faq-item { background: var(--white-color); margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid var(--light-gray); }
@@ -171,16 +154,26 @@
         <div class="container">
             <h1>حوّل طموحك إلى إنجاز</h1>
             <p>منصة الإبهار هي بوابتك للحصول على مساعدة أكاديمية موثوقة من نخبة الخبراء في العالم العربي.</p>
-            <div class="wheel-container">
-                <div class="center-logo">الإبهار</div>
-                <div class="wheel">
-                    <!-- Items will be inserted by JavaScript -->
-                </div>
-            </div>
         </div>
     </header>
 
     <main>
+        <section class="services-bar-container">
+            <div class="container">
+                <div class="elebhar-logo">
+                    <span class="black">منصة</span> <span class="gold">الإبهار</span>
+                </div>
+                <div class="services-bar-grid">
+                    <div class="service-bar-item"><div class="icon">📚</div><h3>أبحاث وواجبات</h3></div>
+                    <div class="service-bar-item"><div class="icon">🎓</div><h3>مشاريع التخرج</h3></div>
+                    <div class="service-bar-item"><div class="icon">📈</div><h3>تحليل إحصائي</h3></div>
+                    <div class="service-bar-item"><div class="icon">🗣️</div><h3>شروحات المقررات</h3></div>
+                    <div class="service-bar-item"><div class="icon">📝</div><h3>تدقيق لغوي</h3></div>
+                    <div class="service-bar-item"><div class="icon">🖥️</div><h3>عروض تقديمية</h3></div>
+                </div>
+            </div>
+        </section>
+
         <section class="contact" id="contact-section">
             <div class="container">
                 <h2 class="section-title">اطلب خدمتك الآن</h2>
@@ -203,21 +196,6 @@
                         <p>متخصص في الرد السريع والمتابعة.</p>
                         <button class="cta-button" onclick="sendWhatsAppMessage('966586659510')">تواصل الآن</button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="detailed-services">
-            <div class="container">
-                <h2 class="section-title">تفاصيل خدماتنا</h2>
-                <p class="section-subtitle">نقدم مجموعة شاملة من الخدمات الأكاديمية المصممة لتلبية كافة احتياجاتك الجامعية بأعلى معايير الجودة والاحترافية.</p>
-                <div class="services-grid">
-                    <div class="service-card-detailed"><div class="icon">📚</div><h3>أبحاث وواجبات</h3><p>إعداد أبحاث وتقارير مبتكرة وخالية من الانتحال.</p></div>
-                    <div class="service-card-detailed"><div class="icon">🎓</div><h3>مشاريع التخرج</h3><p>مساعدة شاملة من الفكرة وحتى التسليم النهائي.</p></div>
-                    <div class="service-card-detailed"><div class="icon">📈</div><h3>تحليل إحصائي</h3><p>تحليل بيانات احترافي باستخدام SPSS وغيرها.</p></div>
-                    <div class="service-card-detailed"><div class="icon">🗣️</div><h3>شروحات المقررات</h3><p>شرح وافٍ للمواد لضمان استيعابك الكامل.</p></div>
-                    <div class="card-detailed"><div class="icon">📝</div><h3>تدقيق لغوي</h3><p>مراجعة دقيقة لضمان خلو أعمالك من الأخطاء.</p></div>
-                    <div class="service-card-detailed"><div class="icon">🖥️</div><h3>عروض تقديمية</h3><p>تصميم عروض تقديمية احترافية ومبهرة.</p></div>
                 </div>
             </div>
         </section>
@@ -262,68 +240,6 @@
     </footer>
 
     <script>
-        // --- Interactive Services Wheel ---
-        const wheel = document.querySelector('.wheel');
-        const items = [
-            { icon: '📚', text: 'أبحاث' }, { icon: '🎓', text: 'تخرج' }, { icon: '📈', text: 'تحليل' },
-            { icon: '🗣️', text: 'شروحات' }, { icon: '📝', text: 'تدقيق' }, { icon: '🖥️', text: 'عروض' }
-        ];
-        const radius = 150; // Radius of the circle
-        const angleStep = (2 * Math.PI) / items.length;
-
-        items.forEach((item, i) => {
-            const angle = i * angleStep;
-            const x = radius * Math.cos(angle) - 40; // -40 to center the 80px item
-            const y = radius * Math.sin(angle) - 40;
-
-            const wheelItem = document.createElement('div');
-            wheelItem.className = 'wheel-item';
-            wheelItem.style.transform = `translate(${x}px, ${y}px)`;
-            wheelItem.innerHTML = `<div class="icon">${item.icon}</div><div class="text">${item.text}</div>`;
-            wheel.appendChild(wheelItem);
-        });
-
-        let isDragging = false;
-        let startAngle = 0;
-        let currentAngle = 0;
-
-        const startDrag = (e) => {
-            isDragging = true;
-            const startX = e.clientX || e.touches[0].clientX;
-            const startY = e.clientY || e.touches[0].clientY;
-            const rect = wheel.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            startAngle = Math.atan2(startY - centerY, startX - centerX) - currentAngle;
-            wheel.style.transition = 'none';
-        };
-
-        const drag = (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const clientX = e.clientX || e.touches[0].clientX;
-            const clientY = e.clientY || e.touches[0].clientY;
-            const rect = wheel.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const angle = Math.atan2(clientY - centerY, clientX - centerX);
-            currentAngle = angle - startAngle;
-            wheel.style.transform = `rotate(${currentAngle}rad)`;
-        };
-
-        const stopDrag = () => {
-            isDragging = false;
-            wheel.style.transition = 'transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1)';
-        };
-
-        wheel.addEventListener('mousedown', startDrag);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', stopDrag);
-        wheel.addEventListener('touchstart', startDrag);
-        document.addEventListener('touchmove', drag, { passive: false });
-        document.addEventListener('touchend', stopDrag);
-
-        // --- WhatsApp Message Function ---
         function sendWhatsAppMessage(phoneNumber) {
             const requestText = document.getElementById('request-text').value;
             if (requestText.trim() === "") {
@@ -337,7 +253,6 @@
             window.open(whatsappURL, '_blank' );
         }
 
-        // --- FAQ Accordion ---
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
