@@ -20,7 +20,7 @@
             --gold-color: #f1c40f;
             --dark-gold-color: #c09d0b;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap' );
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
         
         body {
             font-family: 'Cairo', sans-serif;
@@ -35,7 +35,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ) no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
             color: var(--white-color);
             text-align: center;
             padding: 80px 0;
@@ -43,7 +43,7 @@
         .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
         .hero p { font-size: 1.4rem; max-width: 750px; margin: 0 auto; opacity: 0.9; }
         
-        /* New Services Bar */
+        /* Services Bar */
         .services-bar-container {
             padding: 40px 0;
             text-align: center;
@@ -184,7 +184,7 @@
                         <div class="crown">👑</div>
                         <h3>المنسق الرئيسي</h3>
                         <div class="flags">🇸🇦 🇦🇪 🇰🇼 🇶🇦 🇧🇭 🇯🇴 🇴🇲</div>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966532035449')">تواصل الآن (لجميع الدول)</button>
+                        <button class="cta-button" onclick="sendWhatsAppMessage('966574606717')">تواصل الآن (لجميع الدول)</button>
                     </div>
                     <div class="coordinator-card side-coordinator-1">
                         <h3>منسق خدمات #2</h3>
@@ -250,7 +250,7 @@
             const message = `السلام عليكم،\nأرغب في طلب خدمة من منصة الإبهار.\n\nتفاصيل الطلب:\n${requestText}`;
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            window.open(whatsappURL, '_blank' );
+            window.open(whatsappURL, '_blank');
         }
 
         const faqItems = document.querySelectorAll('.faq-item');
