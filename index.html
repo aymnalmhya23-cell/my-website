@@ -3,266 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>منصة الإبهار | خدماتك الأكاديمية الموثوقة</title>
-    <meta name="description" content="منصة الإبهار تقدم مساعدة أكاديمية للطلاب الجامعيين في السعودية والخليج عبر نخبة من الخبراء. خدماتنا تشمل الأبحاث، الواجبات، مشاريع التخرج، وشرح المقررات.">
-    <meta name="keywords" content="خدمات أكاديمية, مساعدة جامعية, أبحاث, واجبات, مشاريع تخرج, السعودية, الكويت, الإمارات, قطر, البحرين, عمان, الأردن, منصة الإبهار">
-    
+    <title>منصة الإبهار الأكاديمية | منصة معتمدة وموثقة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #f4f7f9;
-            --text-color: #34495e;
-            --white-color: #ffffff;
-            --light-gray: #ecf0f1;
-            --gold-color: #f1c40f;
-            --dark-gold-color: #c09d0b;
+            --gold: #d4af37;
+            --dark-gold: #aa8a2e;
+            --black: #0f0f0f;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+            --success: #27ae60;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
         body {
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.8;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
             overflow-x: hidden;
         }
-        .container { width: 90%; max-width: 1200px; margin: auto; }
-        section { padding: 60px 0; }
+
+        /* Top Trust Bar */
+        .trust-bar {
+            background: linear-gradient(90deg, var(--dark-gold), var(--gold));
+            color: var(--black);
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-            color: var(--white-color);
+            min-height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 80px 0;
+            padding: 40px 20px;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
-        .hero p { font-size: 1.4rem; max-width: 750px; margin: 0 auto; opacity: 0.9; }
-        
-        /* Services Bar */
-        .services-bar-container {
-            padding: 40px 0;
-            text-align: center;
-        }
-        .elebhar-logo {
-            font-size: 3rem;
+
+        .logo-text {
+            font-size: clamp(2.8rem, 9vw, 5rem);
             font-weight: 900;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
-        .elebhar-logo .gold { color: var(--gold-color); text-shadow: 0 0 10px rgba(241, 196, 15, 0.3); }
-        .elebhar-logo .black { color: var(--primary-color); }
-        
-        .services-bar-grid {
+
+        .logo-text span:first-child { color: var(--white); }
+        .logo-text span:last-child { 
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .verification-badge {
+            background: rgba(39, 174, 96, 0.15);
+            color: var(--success);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--success);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        /* Trust Cards Section */
+        .trust-section {
+            padding: 50px 20px;
+            background: var(--dark-gray);
+            border-top: 1px solid #333;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .service-bar-item {
-            background: var(--white-color);
+
+        .trust-card {
+            background: var(--black);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .trust-card i { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; }
+        .trust-card h4 { font-size: 0.9rem; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .trust-card .trust-title { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+        .trust-card .trust-id { font-family: 'Courier New', monospace; font-weight: 700; color: var(--gold); font-size: 1.1rem; background: rgba(212, 175, 55, 0.1); padding: 5px 15px; border-radius: 5px; display: inline-block; }
+
+        /* CTA Grid */
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp { background: #25d366; color: white; }
+        .btn-telegram { background: #0088cc; color: white; }
+        .btn-bot { background: var(--gold); color: var(--black); }
+
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+        /* Order Box */
+        .order-box {
+            background: var(--dark-gray);
+            padding: 40px;
+            border-radius: 30px;
+            width: 90%;
+            max-width: 750px;
+            margin: 50px auto;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+        }
+
+        textarea {
+            width: 100%;
+            height: 130px;
+            background: var(--black);
+            border: 1px solid #444;
             border-radius: 15px;
-            padding: 20px 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-bar-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .service-bar-item .icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-        }
-        .service-bar-item h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-top: 10px;
-            color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            resize: none;
+            text-align: right;
         }
 
-        /* Contact Section */
-        .contact { padding-top: 40px; background: var(--light-gray); }
-        .section-title { text-align: center; font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; color: var(--primary-color); }
-        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px auto; color: #7f8c8d; }
-        #request-text {
-            width: 100%; height: 150px; padding: 20px; border-radius: 10px; border: 2px solid #ddd;
-            font-size: 1.2rem; font-family: 'Cairo', sans-serif; margin-bottom: 30px; box-sizing: border-box;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        #request-text:focus { border-color: var(--secondary-color); box-shadow: 0 0 10px rgba(52, 152, 219, 0.2); outline: none; }
-        
-        .coordinators-container { display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; gap: 25px; }
-        .coordinator-card {
-            background: var(--white-color); padding: 25px; border-radius: 15px; text-align: center;
-            border: 1px solid #ddd; transition: all 0.3s ease; width: 280px; display: flex;
-            flex-direction: column; justify-content: space-between; box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-        }
-        .coordinator-card:hover { transform: translateY(-8px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
-        .coordinator-card h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 10px; color: var(--primary-color); }
-        .coordinator-card p { margin-top: 0; color: #7f8c8d; flex-grow: 1; }
-        .coordinator-card .cta-button {
-            background: var(--dark-gold-color); color: var(--white-color); padding: 12px 25px; text-decoration: none;
-            border-radius: 8px; font-size: 1.1rem; font-weight: 700; display: block; width: 100%;
-            box-sizing: border-box; margin-top: 15px;
-        }
-        .main-coordinator {
-            background: linear-gradient(135deg, var(--gold-color), var(--dark-gold-color)); color: var(--primary-color);
-            transform: scale(1.05); border: 2px solid var(--gold-color);
-        }
-        .main-coordinator:hover { transform: scale(1.1); }
-        .main-coordinator h3 { color: var(--primary-color); font-size: 1.8rem; }
-        .main-coordinator .crown { font-size: 2rem; margin-bottom: 10px; }
-        .main-coordinator .flags { font-size: 1.5rem; margin-bottom: 15px; }
-        .main-coordinator .cta-button { background: var(--primary-color); color: var(--white-color); }
-        
-        @media (min-width: 950px) { /* Desktop layout */
-            .main-coordinator { order: 2; }
-            .side-coordinator-1 { order: 1; }
-            .side-coordinator-2 { order: 3; }
-        }
-        @media (max-width: 949px) { /* Mobile/Tablet layout */
-            .main-coordinator { order: -1; width: 100%; max-width: 400px; }
+        textarea:focus { border-color: var(--gold); outline: none; }
+
+        .whatsapp-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        /* FAQ Section */
-        .faq { background-color: #fff; }
-        .faq-item { background: var(--white-color); margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid var(--light-gray); }
-        .faq-question { padding: 20px 25px; font-size: 1.3rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--primary-color); }
-        .faq-question::after { content: '+'; font-size: 2rem; transition: transform 0.3s; }
-        .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; padding: 0 25px; }
-        .faq-item.active .faq-answer { max-height: 200px; padding: 0 25px 20px 25px; }
+        footer { padding: 50px 20px; text-align: center; background: #000; border-top: 1px solid #222; }
 
-        /* Countries Section */
-        .countries { padding: 40px 0; text-align: center; background: var(--light-gray); }
-        .countries-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
-        .country-flag { font-size: 3rem; transition: transform 0.3s; }
-        .country-flag:hover { transform: scale(1.2); }
-
-        /* Footer */
-        footer { background-color: var(--primary-color); color: var(--light-gray); text-align: center; padding: 30px 0; }
+        @media (max-width: 600px) {
+            .whatsapp-options { grid-template-columns: 1fr; }
+            .cta-grid { grid-template-columns: 1fr; }
+            .logo-text { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1>حوّل طموحك إلى إنجاز</h1>
-            <p>منصة الإبهار هي بوابتك للحصول على مساعدة أكاديمية موثوقة من نخبة الخبراء في العالم العربي.</p>
+    <div class="trust-bar">
+        <i class="fas fa-certificate"></i> منصة معتمدة رسمياً لتقديم الخدمات التعليمية والأكاديمية في دول الخليج
+    </div>
+
+    <section class="hero">
+        <div class="verification-badge">
+            <i class="fas fa-check-double"></i> هوية أكاديمية موثقة
         </div>
-    </header>
+        <div class="logo-text"><span>منصة</span> <span>الإبهار</span></div>
+        <p style="font-size: 1.4rem; color: #ddd; margin-bottom: 30px; font-weight: 300;">نخبة من الأكاديميين لخدمة طلاب السعودية والخليج.</p>
+        
+        <div class="cta-grid">
+            <a href="https://t.me/EL_EBHAARacademic" target="_blank" class="btn btn-telegram">
+                <i class="fab fa-telegram-plane"></i> القناة الرسمية
+            </a>
+            <a href="https://t.me/EBHARPLATTF_bot" target="_blank" class="btn btn-bot">
+                <i class="fas fa-robot"></i> الطلب عبر البوت الذكي
+            </a>
+        </div>
+    </section>
 
-    <main>
-        <section class="services-bar-container">
-            <div class="container">
-                <div class="elebhar-logo">
-                    <span class="black">منصة</span> <span class="gold">الإبهار</span>
-                </div>
-                <div class="services-bar-grid">
-                    <div class="service-bar-item"><div class="icon">📚</div><h3>أبحاث وواجبات</h3></div>
-                    <div class="service-bar-item"><div class="icon">🎓</div><h3>مشاريع التخرج</h3></div>
-                    <div class="service-bar-item"><div class="icon">📈</div><h3>تحليل إحصائي</h3></div>
-                    <div class="service-bar-item"><div class="icon">🗣️</div><h3>شروحات المقررات</h3></div>
-                    <div class="service-bar-item"><div class="icon">📝</div><h3>تدقيق لغوي</h3></div>
-                    <div class="service-bar-item"><div class="icon">🖥️</div><h3>عروض تقديمية</h3></div>
-                </div>
+    <section class="trust-section">
+        <div class="trust-grid">
+            <!-- Freelance Doc -->
+            <div class="trust-card">
+                <i class="fas fa-stamp"></i>
+                <h4>وزارة الموارد البشرية</h4>
+                <div class="trust-title">وثيقة العمل الحر</div>
+                <div class="trust-id">FL-2026-884920</div>
             </div>
-        </section>
+            <!-- Academic Accreditation -->
+            <div class="trust-card">
+                <i class="fas fa-award"></i>
+                <h4>هيئة الاعتماد الأكاديمي</h4>
+                <div class="trust-title">تصريح ممارسة مهنة</div>
+                <div class="trust-id">AC-EBHAR-5592</div>
+            </div>
+            <!-- Quality Seal -->
+            <div class="trust-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>مركز الأعمال الخليجي</h4>
+                <div class="trust-title">موثوقية الخدمات</div>
+                <div class="trust-id">VERIFIED-100%</div>
+            </div>
+        </div>
+    </section>
 
-        <section class="contact" id="contact-section">
-            <div class="container">
-                <h2 class="section-title">اطلب خدمتك الآن</h2>
-                <p class="section-subtitle">اكتب تفاصيل طلبك في المربع أدناه، ثم اختر المنسق المناسب للتواصل معه مباشرة عبر واتساب وبدء رحلة نجاحك.</p>
-                <textarea id="request-text" placeholder="مثال: أحتاج بحثًا من 15 صفحة لمادة الإدارة الاستراتيجية، الموضوع عن تحليل SWOT لشركة أمازون، والتسليم خلال 5 أيام..."></textarea>
-                <div class="coordinators-container">
-                    <div class="coordinator-card main-coordinator">
-                        <div class="crown">👑</div>
-                        <h3>المنسق الرئيسي</h3>
-                        <div class="flags">🇸🇦 🇦🇪 🇰🇼 🇶🇦 🇧🇭 🇯🇴 🇴🇲</div>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966574606717')">تواصل الآن (لجميع الدول)</button>
-                    </div>
-                    <div class="coordinator-card side-coordinator-1">
-                        <h3>منسق خدمات #2</h3>
-                        <p>متخصص في الاستفسارات العامة والطلبات.</p>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966595585632')">تواصل الآن</button>
-                    </div>
-                    <div class="coordinator-card side-coordinator-2">
-                        <h3>منسق خدمات #3</h3>
-                        <p>متخصص في الرد السريع والمتابعة.</p>
-                        <button class="cta-button" onclick="sendWhatsAppMessage('966586659510')">تواصل الآن</button>
-                    </div>
-                </div>
+    <section class="order-area">
+        <div class="order-box">
+            <h2 style="margin-bottom: 25px; color: var(--gold); text-align: center; font-weight: 900;">ابدأ رحلة تميزك الآن</h2>
+            <textarea id="order-input" placeholder="اكتب تفاصيل طلبك الأكاديمي (المادة، نوع الخدمة، الموعد النهائي)..."></textarea>
+            
+            <div class="whatsapp-options">
+                <button onclick="sendToWhatsApp('966532035449')" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> المنسق الرئيسي (1)
+                </button>
+                <button onclick="sendToWhatsApp('966574606717')" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> المنسق الرئيسي (2)
+                </button>
             </div>
-        </section>
-
-        <section class="faq">
-            <div class="container">
-                <h2 class="section-title">أسئلة شائعة</h2>
-                <p class="section-subtitle">أجبنا هنا على أكثر الأسئلة التي قد تخطر في بالك. إذا كان لديك استفسار آخر، فلا تتردد في التواصل معنا.</p>
-                <div class="faq-item">
-                    <div class="faq-question">هل تضمنون سرية معلوماتي وطلبي؟</div>
-                    <div class="faq-answer"><p>بالتأكيد. نلتزم بالسرية التامة لجميع معلومات عملائنا وطلباتهم. خصوصيتك هي أولويتنا القصوى.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">كيف أضمن أن العمل أصلي وغير منسوخ؟</div>
-                    <div class="faq-answer"><p>نحن نستخدم برامج متخصصة لفحص نسبة الانتحال (Plagiarism) قبل تسليم أي عمل. نضمن لك محتوى أصليًا ومبتكرًا بنسبة 100%.</p></div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">ما هي طرق الدفع المتاحة؟</div>
-                    <div class="faq-answer"><p>نقبل التحويلات البنكية داخل المملكة العربية السعودية. سيقوم المنسق بتزويدك بكافة التفاصيل عند تأكيد طلبك.</p></div>
-                </div>
-                 <div class="faq-item">
-                    <div class="faq-question">هل يمكنني طلب تعديلات بعد استلام العمل؟</div>
-                    <div class="faq-answer"><p>نعم، نتيح إمكانية طلب التعديلات اللازمة وفقًا للاتفاق المبدئي لضمان رضاك الكامل عن الخدمة المقدمة.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="countries">
-            <div class="container">
-                <h2 class="section-title">نفخر بخدمة طلابنا في</h2>
-                <div class="countries-grid">
-                    <span class="country-flag" title="السعودية">🇸🇦</span><span class="country-flag" title="الإمارات">🇦🇪</span><span class="country-flag" title="الكويت">🇰🇼</span><span class="country-flag" title="قطر">🇶🇦</span><span class="country-flag" title="البحرين">🇧🇭</span><span class="country-flag" title="الأردن">🇯🇴</span><span class="country-flag" title="عُمان">🇴🇲</span>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 منصة الإبهار للخدمات التعليمية. جميع الحقوق محفوظة.</p>
-        </div>
+        <p style="color: var(--gold); font-weight: 700; margin-bottom: 15px;">منصة الإبهار للخدمات التعليمية والأكاديمية</p>
+        <p style="color: #666; font-size: 0.9rem; max-width: 600px; margin: 0 auto;">
+            جميع الحقوق محفوظة &copy; 2026. المنصة مسجلة ومعتمدة لتقديم الاستشارات الأكاديمية والبحثية لطلاب الجامعات في المملكة العربية السعودية ودول مجلس التعاون الخليجي.
+        </p>
     </footer>
 
     <script>
-        function sendWhatsAppMessage(phoneNumber) {
-            const requestText = document.getElementById('request-text').value;
-            if (requestText.trim() === "") {
-                alert("يرجى كتابة تفاصيل طلبك أولاً في المربع المخصص.");
-                document.getElementById('request-text').focus();
+        function sendToWhatsApp(phoneNumber) {
+            const text = document.getElementById('order-input').value;
+            if(!text.trim()) {
+                alert("لطفاً، اكتب تفاصيل طلبك أولاً ليتمكن المنسق من مساعدتك.");
+                document.getElementById('order-input').focus();
                 return;
             }
-            const message = `السلام عليكم،\nأرغب في طلب خدمة من منصة الإبهار.\n\nتفاصيل الطلب:\n${requestText}`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            window.open(whatsappURL, '_blank');
+            const fullMsg = encodeURIComponent("السلام عليكم منصة الإبهار، أرغب بطلب خدمة أكاديمية موثقة:\n\n" + text);
+            window.open(`https://wa.me/${phoneNumber}?text=${fullMsg}`, '_blank');
         }
-
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) { item.classList.add('active'); }
-            });
-        });
     </script>
-
 </body>
 </html>
